@@ -24,12 +24,12 @@ if 'ProcessId' in df.columns:  # 確保 ProcessId 存在
     # Filter for anomalies based on time difference
     df_anomalous = df_grouped[df_grouped['time_diff'] > threshold]
 
-    # Replace 'module_name' with a valid column name (e.g., 'Image' or another relevant column)
+    # Replace 'module_name' with a valid column name (e.g., 'Image' or another relevant column)-->【ProcessName】
     def is_sequence_anomalous(ProcessName):
         # Define logic to detect if the sequence is anomalous
         pass  # Replace with your detection logic
 
-    # Apply the function to flag sequence anomalies
+    # Apply the function to flag sequence anomalies-->df_grouped['module_name']-->df_grouped['ProcessName']
     df_grouped['is_sequence_anomalous'] = df_grouped['ProcessName'].apply(is_sequence_anomalous)  # 使用正確的列名
 
     # Combine anomaly flags
